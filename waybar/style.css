@@ -1,0 +1,310 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
+  font-size: 14px;
+}
+
+window#waybar {
+  background-color: rgba(26, 27, 38, 0.1);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+/* 
+window#waybar.hidden {
+  display: none;
+} */
+
+/* #window {
+  color: #64727d;
+} */
+
+#cpu,
+#memory,
+#custom-media,
+#custom-launcher,
+#taskbar,
+#tray,
+#mode,
+#controller,
+#workspaces,
+#idle_inhibitor,
+#custom-spotify,
+#custom-mediaplayer,
+#my-custom-power {
+  color: #e5e5e5;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 500px;
+  font-size: 14px;
+
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#custom-weather{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#custom-power{
+  color: #e78284;
+  font-size: 18px;
+}
+
+#custom-power
+{
+  padding-right: 7px;
+  font-size: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#custom-quit,
+#custom-lock,
+#custom-reboot {
+  padding-left: 7px;
+  padding-right: 7px;
+  font-size: 20px;
+}
+
+#custom-quit {
+  padding-left: 12px;
+  margin-top: 3px;
+}
+
+#custom-reboot {
+  padding-right: 12px;
+  font-size: 22px;
+}
+
+.module:hover {
+  color: #C27154;
+}
+
+#network{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#bluetooth {
+  padding-left: 8px;
+  padding-right: 8px;
+} 
+
+#pulseaudio {
+  padding-left: 4px;
+  padding-right: 15px;
+}
+
+#workspaces button {
+  border: none;
+}
+#workspaces button:hover {
+  color: #C27154;
+}
+
+#workspaces button {
+  color: #7a95c9;
+  box-shadow: inset 0 -3px transparent;
+  padding-right: 6px;
+  padding-left: 3px;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button.active {
+  color: #ecd3a0;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+  padding-left: 8px;
+  padding-right: 10px;
+}
+
+#workspaces.module:first-child {
+  padding-left: 8px;
+}
+
+#workspaces.module:last-child {
+  padding-right: 8px;
+}
+
+#workspaces button.active:first-child {
+  padding-left: 2px;
+}
+
+#workspaces button.active:last-child {
+  padding-right: 4px;
+}
+
+#custom-launcher {
+
+  padding-right: 16px;
+  padding-left: 10px;
+
+  font-size: 18px;
+
+  color: #7a95c9; /* #CC8B69 */
+}
+
+#pulseaudio.muted {
+  color: #fb958b;
+  font-size: 18px;
+}
+
+#backlight {
+  color: #8a909e;
+  padding-right: 5px;
+  padding-left: 8px;
+  font-size: 21.2px;
+}
+
+#network.disconnected {
+  color: #fb958b;
+}
+
+#battery {
+  color: #8fbcbb;
+  border-radius: 0px 8px 8px 0px;
+  padding-right: 2px;
+  font-size: 18px;
+}
+
+#battery.critical,
+#battery.warning,
+#battery.full,
+#battery.plugged {
+  color: #8fbcbb;
+  padding-left: 6px;
+  padding-right: 12px;
+  font-size: 18px;
+}
+
+#battery.charging { 
+  font-size: 14px;
+  padding-right: 13px;
+  padding-left: 4px;
+}
+
+#battery.full,
+#battery.plugged {
+  font-size: 18.5px;
+  padding-right: 10px;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(30, 34, 42, 0.5);
+    color: #abb2bf;
+  }
+}
+
+#battery.warning {
+  color: #ecd3a0;
+}
+
+#battery.critical:not(.charging) {
+  color: #fb958b;
+}
+
+tooltip {
+  font-family: Iosevka Nerd Font;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #1f232b;
+}
+
+tooltip label {
+  font-family: Iosevka Nerd Font;
+  padding: 5px;
+  color: #8a909e;
+}
+
+label:focus {
+  background-color: #1f232b;
+}
+
+#tray,
+#clock
+{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+  background-color: #242933;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#custom-spotify {
+  color: #abb2bf;
+}
+
+#custom-weather {
+  font-family: Iosevka Nerd Font;
+  font-size: 15px;
+  color: #8a909e;
+}
+
+#custom-weather.severe {
+  color: #eb937d;
+}
+
+#custom-weather.sunnyDay {
+  color: #c2ca76;
+}
+
+#custom-weather.clearNight {
+  color: #cad3f5;
+}
+
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight {
+  color: #c2ddda;
+}
+
+#custom-weather.rainyDay,
+#custom-weather.rainyNight {
+  color: #5aaca5;
+}
+
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight {
+  color: #d6e7e5;
+}
+
+#custom-weather.default {
+  color: #dbd9d8;
+}
+
+#custom-mediaplayer
+{
+  font-size: 14px;
+  margin-left: 0px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#image
+{
+  padding: 0px 0px;
+  background-color: #252733;
+  border-radius: 8px 0 0 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 0px;
+}
+@import "./waybar-mediaplayer/src/style.css";

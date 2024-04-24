@@ -1,0 +1,220 @@
+{
+    // "height": 50,
+    "layer": "top", // Waybar at top layer
+    "modules-left": [
+        "custom/launcher",
+        "cpu",
+        "memory",
+        "custom/weather",
+        "wlr/taskbar",
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "image",
+        "custom/mediaplayer",
+        "bluetooth",
+        "network",
+        "pulseaudio",
+        // "backlight",
+        // "battery",
+        "clock",
+        "custom/lock",
+        "custom/power-menu"
+    ],
+    // "hyprland/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "on-click": "activate",
+    //     //"format": "{icon}",
+    //     "persistent_workspaces": {
+    //       "1": [],
+    //       "2": [],
+    //       "3": [],
+    //       "4": [],
+    //       "5": [],
+    //       "6": [],
+    //       "7": [],
+    //       "8": [],
+    //       "9": [],
+    //       "10": []
+    //     }
+    //   },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "term": "",
+            "active": " 󰮯",
+            "default": ""
+        }
+    },
+    "bluetooth": {
+        "on-click": "blueman-manager &",
+        "format": " {status}",
+        "format-connected": " {num_connections}",
+        // "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%b %d %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {}%",
+        "max-length": 10,
+        "on-click": ""
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "format-alt": " {used:0.1f}GB",
+        "max-length": 10
+    },
+    "backlight": {
+        "device": "eDP-1",
+        "format": "{icon}",
+        "tooltip-format": "{percent}",
+        "format-icons": [
+            "󱩎 ",
+            "󱩏 ",
+            "󱩐 ",
+            "󱩑 ",
+            "󱩒 ",
+            "󱩓 ",
+            "󱩔 ",
+            "󱩕 ",
+            "󱩖 ",
+            "󰛨 "
+        ]
+    },
+    "network": {
+        /* "format-wifi": "直", */
+        "format-wifi": "{icon}",
+        "format-ethernet": " ",
+        "format-disconnected": "睊",
+        "tooltip-format": "{essid}",
+        "on-click": "~/.config/waybar/scripts/network/rofi-network-manager.sh",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "婢",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                "墳"
+            ]
+        },
+        "on-click": "pavucontrol &"
+    },
+    "image": {
+        "path": "/tmp/waybar-mediaplayer-art",
+        "size": 32, // 32
+        "signal": 4,
+        "on-click": "feh --auto-zoom --borderless --title 'feh-float' /tmp/waybar-mediaplayer-art"
+    },
+    "custom/mediaplayer": {
+        "exec": "/home/nono/mambaforge/envs/waybar/bin/python $HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer monitor",
+        "return-type": "json",
+        "format": "{}",
+        "on-click": "/home/nono/mambaforge/envs/waybar/bin/python $HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer play-pause",
+        "on-scroll-up": "/home/nono/mambaforge/envs/waybar/bin/python $HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer next",
+        "on-scroll-down": "/home/nono/mambaforge/envs/waybar/bin/python $HOME/.config/waybar/waybar-mediaplayer/src/mediaplayer previous",
+        "min-length": 20,
+        "max-length": 20
+    },
+    "battery": {
+        "bat": "BAT0",
+        "adapter": "ADP0",
+        "interval": 60,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "max-length": 20,
+        "format": "{icon} ",
+        "format-warning": "{icon}",
+        "format-critical": "{icon}",
+        "format-charging": "<span font-family='Font Awesome 6 Free'></span>",
+        "format-plugged": "ﮣ",
+        "format-alt": "{icon} {time}",
+        "format-full": "ﮣ",
+        "format-icons": [
+            "󱊡",
+            "󱊢",
+            "󱊣"
+        ]
+    },
+    "custom/weather": {
+        "exec": "python3 ~/.config/waybar/scripts/weather.py",
+        "restart-interval": 300,
+        "return-type": "json",
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "swaylock --screenshots --clock --indicator --indicator-radius 100 --indicator-thickness 7 --effect-blur 7x5 --effect-vignette 0.5:0.5 --ring-color bb00cc --key-hl-color 880033 --line-color 00000000 --inside-color 00000088 --separator-color 00000000 --fade-in 0.2",
+        "format": "",
+    },
+    // "custom/spotify": {
+    //     "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    //     "format": " {}",
+    //     "return-type": "json",
+    //     "on-click": "playerctl play-pause",
+    //     "on-double-click-right": "playerctl next",
+    //     "on-scroll-down": "playerctl previous",
+    // },
+    "custom/power-menu": {
+        "format": " ⏻ ",
+        "on-click": "bash ~/.config/waybar/scripts/power-menu/powermenu.sh &",
+    },
+    "custom/launcher": {
+        "format": "",
+        "on-click": "rofi -show drun &",
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) - Brave": "$1",
+            "(.*) - Chromium": "$1",
+            "(.*) - Brave Search": "$1",
+            "(.*) - Outlook": "$1",
+            "(.*) Microsoft Teams": "$1"
+        },
+        "separate-outputs": true
+    },
+}
