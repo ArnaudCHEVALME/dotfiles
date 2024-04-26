@@ -229,6 +229,9 @@ label:focus {
   padding-left: 8px;
   padding-right: 8px;
 }
+#taskbar > * {
+  border: none;
+}
 
 #tray > .passive {
   -gtk-icon-effect: dim;
