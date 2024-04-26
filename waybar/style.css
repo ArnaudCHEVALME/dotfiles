@@ -229,6 +229,12 @@ label:focus {
   padding-left: 8px;
   padding-right: 8px;
 }
+
+#taskbar {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 #taskbar > * {
   border: none;
 }
