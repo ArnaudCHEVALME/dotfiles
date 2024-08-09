@@ -297,23 +297,3 @@ label:focus {
 #custom-weather.default {
   color: #dbd9d8;
 }
-
-#custom-mediaplayer
-{
-  font-size: 14px;
-  margin-left: 0px;
-  border-radius: 0 8px 8px 0;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-#image
-{
-  padding: 0px 0px;
-  background-color: #252733;
-  border-radius: 8px 0 0 8px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  margin-right: 0px;
-}
-@import "./waybar-mediaplayer/src/style.css";
