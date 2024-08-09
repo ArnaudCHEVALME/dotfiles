@@ -6,7 +6,7 @@
         // "cpu",
         // "memory",
         "custom/weather",
-        "wlr/taskbar",
+        "wlr/taskbar"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -29,8 +29,8 @@
         },
         "format-icons": {
             "term": "",
-            "active": "󰮯",
-            "default": ""
+            // "active": "󰮯",
+            // "default": ""
         }
     },
     "bluetooth": {
@@ -50,7 +50,7 @@
     },
     "clock": {
         "format": "{:%H:%M}",
-        "format-alt": "{:%b %d %Y}",
+        "format-alt": "{:%b %d %Y - %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
     "cpu": {
