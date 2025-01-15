@@ -6,19 +6,19 @@ continuation_prompt = "[▸▹ ](dimmed white)"
 
 format = """$os\
 $sudo\
+$username\
+$hostname\
+$localip\
 $directory\
 $git_branch\
 $git_status\
 $git_commit\
 $git_state\
 $git_metrics\
-$hostname\
-$localip\
 $shlvl\
 $shell\
 $env_var\
 $jobs\
-$username\
 $fill\
 $singularity\
 $kubernetes\
@@ -136,7 +136,7 @@ style = "white"
 
 [localip]
 ssh_only = true
-format = " ◯[$localipv4](bold magenta)"
+format = '[$localipv4]($style) '
 disabled = false
 
 [git_branch]
@@ -385,4 +385,3 @@ symbol = " "
 [gradle]
 symbol = " "
 format = " [$symbol($version)]($style)"
-
