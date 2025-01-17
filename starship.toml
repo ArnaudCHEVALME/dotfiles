@@ -51,6 +51,7 @@ $kotlin\
 $gradle\
 $lua\
 $nim\
+$bun\
 $nodejs\
 $ocaml\
 $opa\
@@ -174,9 +175,13 @@ style = "bold bright-yellow"
 symbol = "󰎙 "
 format = " [$symbol($version)]($style)"
 version_format = "${raw}"
-detect_files = ["package-lock.json", "yarn.lock"]
+detect_files = ['package.json', "yarn.lock", '.node-version', '!bunfig.toml', '!bun.lockb']
 detect_folders = ["node_modules"]
 detect_extensions = []
+
+[bun]
+style = "bold dimmed yellow"
+format = " [$symbol($version)]($style)"
 
 [python]
 symbol = " "
